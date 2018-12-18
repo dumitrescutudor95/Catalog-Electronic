@@ -42,7 +42,7 @@ public class info extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("1.Adaugarea elevilor in clasa.");
+        jLabel3.setText("1.Selectarea clasei si adaugarea eventuala a mai multor elevi.");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -90,8 +90,9 @@ public class info extends javax.swing.JFrame {
         jLabel13.setText("3.Adaugarea absentelor(la nevoie).la 10 absente nemotivate se va scadea  un punct ");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
 
-        bAmInteles.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        bAmInteles.setForeground(new java.awt.Color(0, 0, 0));
+        bAmInteles.setBackground(new java.awt.Color(0, 0, 0));
+        bAmInteles.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        bAmInteles.setForeground(new java.awt.Color(204, 204, 204));
         bAmInteles.setText("Am inteles");
         bAmInteles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -9,6 +9,7 @@ import java.util.*;
 import java.io.*;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import static java.util.stream.Collectors.toList;
 
 //jFrame
 public class Clasa extends javax.swing.JFrame {
@@ -290,6 +291,7 @@ public class Clasa extends javax.swing.JFrame {
         bMotiveazaAbsente = new javax.swing.JButton();
         labelTime = new javax.swing.JLabel();
         bStergeElev = new javax.swing.JButton();
+        bPreview = new javax.swing.JButton();
         labelBackgroundNote = new javax.swing.JLabel();
         jBackground = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -334,6 +336,7 @@ public class Clasa extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        alegetiClasa.setBackground(new java.awt.Color(0, 0, 0));
         alegetiClasa.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
         alegetiClasa.setText("Alegeti clasa");
         alegetiClasa.addActionListener(new java.awt.event.ActionListener() {
@@ -343,6 +346,7 @@ public class Clasa extends javax.swing.JFrame {
         });
         getContentPane().add(alegetiClasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 650, 50));
 
+        clasa9B.setBackground(new java.awt.Color(0, 0, 0));
         clasa9B.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         clasa9B.setText("Clasa 9B");
         clasa9B.addActionListener(new java.awt.event.ActionListener() {
@@ -352,6 +356,7 @@ public class Clasa extends javax.swing.JFrame {
         });
         getContentPane().add(clasa9B, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, 170, 70));
 
+        clasa9D.setBackground(new java.awt.Color(0, 0, 0));
         clasa9D.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         clasa9D.setText("Clasa 9D");
         clasa9D.addActionListener(new java.awt.event.ActionListener() {
@@ -361,6 +366,7 @@ public class Clasa extends javax.swing.JFrame {
         });
         getContentPane().add(clasa9D, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, 160, 70));
 
+        clasa9C.setBackground(new java.awt.Color(0, 0, 0));
         clasa9C.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         clasa9C.setText("Clasa 9C");
         clasa9C.addActionListener(new java.awt.event.ActionListener() {
@@ -370,6 +376,7 @@ public class Clasa extends javax.swing.JFrame {
         });
         getContentPane().add(clasa9C, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 470, 160, 70));
 
+        clasa9A.setBackground(new java.awt.Color(0, 0, 0));
         clasa9A.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         clasa9A.setText("Clasa 9A");
         clasa9A.addActionListener(new java.awt.event.ActionListener() {
@@ -588,12 +595,12 @@ public class Clasa extends javax.swing.JFrame {
                 checkEndActionPerformed(evt);
             }
         });
-        getContentPane().add(checkEnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 520, -1, -1));
+        getContentPane().add(checkEnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 500, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 51, 0));
         jLabel6.setText("Doresti sa inchei anul?");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 500, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, -1, -1));
 
         tabelFinal.setBackground(new java.awt.Color(153, 51, 0));
         tabelFinal.setForeground(new java.awt.Color(0, 0, 0));
@@ -637,7 +644,7 @@ public class Clasa extends javax.swing.JFrame {
                 bIncheiereAnActionPerformed(evt);
             }
         });
-        getContentPane().add(bIncheiereAn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 550, -1, -1));
+        getContentPane().add(bIncheiereAn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 560, -1, -1));
 
         materieFranceza.setForeground(new java.awt.Color(51, 0, 0));
         materieFranceza.setText("Franceza");
@@ -759,6 +766,16 @@ public class Clasa extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bStergeElev, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 130, -1));
+
+        bPreview.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        bPreview.setForeground(new java.awt.Color(153, 51, 0));
+        bPreview.setText("Preview");
+        bPreview.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bPreviewActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bPreview, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 530, -1, -1));
 
         labelBackgroundNote.setForeground(new java.awt.Color(51, 0, 0));
         labelBackgroundNote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Catalog/woods-600x385.jpg"))); // NOI18N
@@ -984,12 +1001,9 @@ public class Clasa extends javax.swing.JFrame {
 
     }//GEN-LAST:event_checkEndActionPerformed
 
-    //Metoda pentru incheiarea anului:afisarea in tabelul final a fiecarui elev + situatia sa
-
-    private void bIncheiereAnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bIncheiereAnActionPerformed
-
-        if (checkEnd.isSelected()) {
-            DefaultTableModel model = (DefaultTableModel) tabelFinal.getModel();
+    //Metoda pentru incarcarea tabelului final
+    public void incarcaTabel(){
+        DefaultTableModel model = (DefaultTableModel) tabelFinal.getModel();
             
             //Golirea tabeluli actual
             model.getDataVector().removeAllElements();
@@ -1007,7 +1021,30 @@ public class Clasa extends javax.swing.JFrame {
                 model.addRow(new Object[]{id, nume + " " + prenume, medieGen, numarAbsente, adRe});
 
                 id++;
+            } 
+    }
+    //Metoda pentru incheiarea anului:afisarea in tabelul final a fiecarui elev + situatia sa
+
+    private void bIncheiereAnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bIncheiereAnActionPerformed
+
+        if (checkEnd.isSelected()) {
+            int i=JOptionPane.showConfirmDialog(null,"ATENTIE! Odata cu incheierea anului,toti elevii car nu au promovat vor fi exclusi din clasa.\nCei care au promovat vor trece in anul urmator\nSunteti sigur ca doriti sa incheiati anul?","Sunteti sigur?", JOptionPane.YES_NO_OPTION);
+            if (i==JOptionPane.YES_OPTION) {
+                
+           incarcaTabel(); // incarca tabelul 
+           
+            //Incapsularea elevilor promovati intr o lista temporara
+            List<Elev> temp=clasaElevi.stream().filter(e->e.getAdmisRespins()).collect(toList());
+            //ale carei elemente va inlocui elementele din lista clasei
+            clasaElevi.clear();
+                for (Elev e:temp) {
+                 e.resetareDate();
+                 clasaElevi.add(e);
+                }
+                rescriereaFilei();
+              
             }
+           
         }
     }//GEN-LAST:event_bIncheiereAnActionPerformed
 
@@ -1502,7 +1539,7 @@ public class Clasa extends javax.swing.JFrame {
     }//GEN-LAST:event_clasa9BActionPerformed
 
     private void alegetiClasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alegetiClasaActionPerformed
-     
+i.setVisible(true);
     }//GEN-LAST:event_alegetiClasaActionPerformed
 
     private void clasa9AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clasa9AActionPerformed
@@ -1550,6 +1587,12 @@ public class Clasa extends javax.swing.JFrame {
 i.setVisible(true);      
     }//GEN-LAST:event_jInfoActionPerformed
 
+    
+    //Metoda pentru apasarea butonului de preview
+    private void bPreviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPreviewActionPerformed
+       incarcaTabel();
+    }//GEN-LAST:event_bPreviewActionPerformed
+
     public static void main(String args[]) {
 
         try {
@@ -1596,6 +1639,7 @@ i.setVisible(true);
     private javax.swing.JButton bAdaugaRomana;
     private javax.swing.JToggleButton bIncheiereAn;
     private javax.swing.JButton bMotiveazaAbsente;
+    private javax.swing.JButton bPreview;
     private javax.swing.JButton bStergeElev;
     private javax.swing.JLabel backgroundWood;
     private javax.swing.JMenuItem changePasEngleza;

@@ -6,8 +6,6 @@ import java.util.*;
 public class Elev implements Serializable {
 
     //Datele elevului
-    
-  
     //Nume si prenume
     private String nume;
     private String prenume;
@@ -49,15 +47,13 @@ public class Elev implements Serializable {
     public Elev(String nume, String prenume) {
         this.nume = nume;
         this.prenume = prenume;
-       
+
     }
 
     @Override
     public String toString() {
         return nume + " " + prenume;
     }
-
-   
 
     public String getNume() {
         return nume;
@@ -271,5 +267,18 @@ public class Elev implements Serializable {
     //Metoda pentru scaderea numarului absentelor(La motivarea acestora)
     public void scadeNumarAbsente() {
         numarAbsente--;
+    }
+
+    //Metoda pentru resetarea notelor si absentelpr
+    public void resetareDate() {
+        noteRomana.clear();
+        noteMate.clear();
+        noteEngleza.clear();
+        noteFranceza.clear();
+        listaAbsenteR.clear();
+        listaAbsenteM.clear();
+        listaAbsenteE.clear();
+        listaAbsenteF.clear();
+        numarAbsente=0;
     }
 }

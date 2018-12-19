@@ -14,7 +14,7 @@ import static java.util.stream.Collectors.toList;
 //jFrame
 public class Clasa extends javax.swing.JFrame {
 
-    //Fereastra de info ce contine detaliile aplicatiei, afisata la apasarea butonului "CLICK ME"
+    //Fereastra de info ce contine detaliile aplicatiei, afisata la apasarea butonului "ALEGE CLASA"
     public info i;
 
     //Fisiere txt ce contin parolele profesorilor
@@ -33,7 +33,7 @@ public class Clasa extends javax.swing.JFrame {
     //Fisierul elevi.txt,in care se vor stoca fiecare elev si datele sale
     File file;
 
-    //Lista elevilor (HashMap)
+    //Lista elevilor (LinkedList)
     public LinkedList<Elev> clasaElevi = new LinkedList<>();
 
     //Butonul selectat (folosit la adaugarea absentelor pentru a afla materia)
